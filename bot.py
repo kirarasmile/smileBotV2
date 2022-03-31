@@ -8,6 +8,8 @@ from src.search_anime import searchanime
 from src.server_status import serverstatus
 from src.get_b2p import changebilibili
 from src.get_bangumi import get_bangumi
+from src.get_weather import get_weather
+from src.help import get_help
 from aiocqhttp import Message, MessageSegment,api
 
 bot = CQHttp(api_root='http://0.0.0.0:5700')
@@ -32,7 +34,9 @@ async def _(event: Event):
     elif event.message == '/番剧':
         await get_bangumi(bot, event)
     elif '/天气' in event.message:
-        await get_bangumi(bot, event)
+        await get_weather(bot, event)
+    elif '/help' in event.message:
+        await get_help(bot, event)
     # 服务器状态查询，指令：服务器状态+对应游戏服务器缩写
     # pattern_s = re.compile(r'服务器状态(.*)', re.I)
     # server = re.findall(pattern_s,event.message)
@@ -56,6 +60,8 @@ async def handle_msg(event):
         await bot.api.set_essence_msg(message_id = event.message_id)
         # 群聊转私聊，天天风控看着烦，需要开启群内允许私聊
         await getmetainfo(bot, event)
+    elif '/help' in event.message:
+        await get_help(bot, event)
 
 
 # bot.run(host='0.0.0.0', port=8080)

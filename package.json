@@ -1,0 +1,24 @@
+{
+  "name": "smilebotv2",
+  "version": "1.0.0",
+  "description": "* [node-gamedig](https://github.com/gamedig/node-gamedig)\r * [magnet2torrent-js](https://github.com/Tsuk1ko/magnet2torrent-js)\r * [aiocqhttp](https://github.com/nonebot/aiocqhttp)\r * [go-cqhttp](https://github.com/Mrs4s/go-cqhttp)\r ## 功能\r * 磁力链简单验车（查看磁力链资源名） \r * B站链接转换（还没做小程序的转换，懒）\r * 游戏服务器状态查询（使用的GameDig）\r * 天气查询\r * weather_api.py \r * 番剧日报",
+  "main": "m2t.js",
+  "dependencies": {
+    "gamedig": "^4.0.2",
+    "magnet2torrent-js": "^1.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kirarasmile/smileBotV2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kirarasmile/smileBotV2/issues"
+  },
+  "homepage": "https://github.com/kirarasmile/smileBotV2#readme"
+}

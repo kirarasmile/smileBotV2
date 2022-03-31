@@ -4,8 +4,8 @@ import config
 
 # K = C + 273.15
 async def get_weather(bot, event):
-    city = event.message[5:]
-    res = requests.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&APPID=' + str(conif.weather_api))
+    city = event.message[4:]
+    res = requests.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&APPID=' + str(config.weather_api))
     response = json.loads(res.text)
     await bot.send(event, message= '城市：' + city + '\n'\
                                 + '当前温度：' + str(int(response['main']['temp'] - 273.15)) + '°C' + '\n'\

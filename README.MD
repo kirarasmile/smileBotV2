@@ -8,19 +8,16 @@
 * 磁力链简单验车（查看磁力链资源名） 
 * B站链接转换（还没做小程序的转换，懒）
 * 游戏服务器状态查询（使用的GameDig）
-* 天气查询 
-* weather_api.py 
+* 天气查询
 * 番剧日报 
 
 ## 食用
-* npm install
+* npm install 
 * pip install -r requirements.txt
 * 启动你的go-cqhttp，反向WS端口需于bot端口一致
 * 推荐使用uvicorn启动bot，没有可以自己装
     * uvicorn --host 0.0.0.0 --port 5700 bot:bot.asgi
-* 具体bot操作可以自己阅读bot.py
-    * /天气 城市（拼音，中间注意空格）
-    * /番剧
+* 具体bot操作可以使用/help，私聊和群聊均可
 * 天气模块请前往 [openweathermap](https://openweathermap.org/api) 申请API TOKEN,并填入config.py内
 * 在Q群内高频发url或图片容易触发风控，但是不影响私聊，望周知
 ## todo
