@@ -7,6 +7,7 @@
 ## 功能
 * 磁力链简单验车（查看磁力链资源名） 
 * B站链接转换（还没做小程序的转换，懒）
+* 番剧截图搜索（私聊）
 * 游戏服务器状态查询（使用的GameDig）
 * 天气查询
 * 番剧日报 
@@ -19,10 +20,10 @@
     * uvicorn --host 0.0.0.0 --port 5700 bot:bot.asgi
 * 具体bot操作可以使用/help，私聊和群聊均可
 * 天气模块请前往 [openweathermap](https://openweathermap.org/api) 申请API TOKEN,并填入config.py内
+* 服务器查询需要自行配置且在bot.py中取消注释启用
 * 在Q群内高频发url或图片容易触发风控，但是不影响私聊，望周知
 ## todo
 * 完善B站小程序的链接转换
 * 完善食用文档
-* 增加config文件控制参数
 * 新增功能（或许
 * 摆烂（x
