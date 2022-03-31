@@ -8,6 +8,13 @@
 * 磁力链简单验车（查看磁力链资源名） 
 * B站链接转换（还没做小程序的转换，懒）
 * 游戏服务器状态查询（使用的GameDig）
+* 天气查询 
+> weather_api.py 
++ +  请前往 [openweathermap](https://openweathermap.org/api) 申请API TOKEN
+```python 
+python3 weather_api.py --position city_name
+```
+
 ## 食用
 * npm install
 * pip install -r requirements.txt
