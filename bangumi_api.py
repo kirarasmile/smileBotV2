@@ -7,7 +7,7 @@ def request_get(url):
 
 
 def bangumi_tv(url):
-    res = request_get('url')
+    res = request_get(url)
     weekday = datetime.datetime.today().weekday()
     date_time = json.loads(res.text)[weekday]['weekday']
     item_name = json.loads(res.text)[weekday]['items']
