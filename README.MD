@@ -14,6 +14,11 @@
 ```python 
 python3 weather_api.py --position city_name
 ```
+* 番剧日报 
+> bangumi_api.py
+```python 
+python3 bangumi_api.py
+```
 
 ## 食用
 * npm install
