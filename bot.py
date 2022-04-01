@@ -24,7 +24,7 @@ async def _(event: Event):
     elif 'b23.tv' in event.message:
         await changebilibili(bot, event)
     # 磁力链搜索，发就行
-    elif 'magnet:\?' in event.message:
+    elif 'magnet:?' in event.message:
         pattern_m = re.compile(r'magnet:\?xt=urn:btih:(.*)', re.I)
         magnet = re.findall(pattern_m,event.message)
         await getmetainfo(bot, event)
@@ -50,16 +50,19 @@ async def handle_msg(event):
     # B站link转图文
     if 'bilibili.com' in event.message:
         await changebilibili(bot, event)
-    if 'b23.tv' in event.message:
+    elif 'b23.tv' in event.message:
         await changebilibili(bot, event)
     # 磁力链搜索
-    pattern_m = re.compile(r'magnet:\?xt=urn:btih:(.*)', re.I)
-    magnet = re.findall(pattern_m,event.message)
-    if magnet:
+    elif 'magnet:?' in event.message:
+        pattern_m = re.compile(r'magnet:\?xt=urn:btih:(.*)', re.I)
+        magnet = re.findall(pattern_m,event.message)
+        await getmetainfo(bot, event)
         # 设为精华消息
         await bot.api.set_essence_msg(message_id = event.message_id)
-        # 群聊转私聊，天天风控看着烦，需要开启群内允许私聊
-        await getmetainfo(bot, event)
+    elif '/天气' in event.message:
+        await get_weather(bot, event)
+    elif event.message == '/番剧':
+        await get_bangumi(bot, event)
     elif '/help' in event.message:
         await get_help(bot, event)
 
