@@ -65,6 +65,8 @@ async def handle_msg(event):
         await get_bangumi(bot, event)
     elif '/helpme' in event.message:
         await get_help(bot, event)
+    elif len(event.message)>20:
+        await get_asoul(bot, event)
 
 
 # bot.run(host='0.0.0.0', port=8080)
