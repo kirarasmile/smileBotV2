@@ -1,18 +1,22 @@
 import re, requests
 async def changebilibili(bot, event):
     data = event.message.replace('\\', '')
+    data = data.replace('/', '')
     try:
         if 'www.bilibili.com/video' in data:
-            pattern_b = re.compile(r'www.bilibili.com/video/(.*)/\?spm_id|www.bilibili.com/video/(.*)', re.I)
+            pattern_b = re.compile(r'www.bilibili.comvideo(.*)\?spm_id|www.bilibili.comvideo(.*)\?|www.bilibili.comvideo(.*)', re.I)
             bid_long = re.findall(pattern_b,data)
             for i in bid_long[0]:
                 if i:
                     bid = i
         elif 'b23.tv' in data:
             # pattern_b = re.compile(r'b23.tv/(.*)/\?spm_id|b23.tv/(.*)', re.I)
-            pattern_b = re.compile(r'b23.tv/(.*)\?', re.I)
+            pattern_b = re.compile(r'b23.tv(.*)\?|b23.tv(.*)', re.I)
             bid_short = re.findall(pattern_b,data)
-            data_short = requests.get('https://b23.tv/'+bid_short[0])
+            for i in bid_short[0]:
+                if i:
+                    bid_short = i
+            data_short = requests.get('https://b23.tv/'+bid_short)
             pattern_short = re.compile(r'<meta data-vue-meta="true" itemprop="url" content="https://www.bilibili.com/video/(.*?)/">', re.I)
             try:
                 bid = re.findall(pattern_short,data_short.text)[0]
