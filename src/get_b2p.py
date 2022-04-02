@@ -3,8 +3,8 @@ async def changebilibili(bot, event):
     data = event.message.replace('\\', '')
     data = data.replace('/', '')
     try:
-        if 'www.bilibili.com/video' in data:
-            pattern_b = re.compile(r'www.bilibili.comvideo(.*)\?spm_id|www.bilibili.comvideo(.*)\?|www.bilibili.comvideo(.*)', re.I)
+        if 'www.bilibili.comvideo' in data:
+            pattern_b = re.compile(r'www.bilibili.comvideo(.*)\?|www.bilibili.comvideo(.*)', re.I)
             bid_long = re.findall(pattern_b,data)
             for i in bid_long[0]:
                 if i:
@@ -17,7 +17,7 @@ async def changebilibili(bot, event):
                 if i:
                     bid_short = i
             data_short = requests.get('https://b23.tv/'+bid_short)
-            pattern_short = re.compile(r'<meta data-vue-meta="true" itemprop="url" content="https://www.bilibili.com/video/(.*?)/">', re.I)
+            pattern_short = re.compile(r'https://www.bilibili.com/video/(.*?)/">', re.I)
             try:
                 bid = re.findall(pattern_short,data_short.text)[0]
             except Exception as e:
