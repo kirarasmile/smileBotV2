@@ -22,7 +22,8 @@ async def changebilibili(bot, event):
             try:
                 link = "http://api.bilibili.com/x/web-interface/view?bvid=" + bid
                 data = requests.get(link).json()
-                picurl = '[CQ:image,file=' + data['data']['pic'] + ']'
+                # picurl = '[CQ:image,file=' + data['data']['pic'] + ']'
+                # picurl = MessageSegment.image(data['data']['pic'])
                 title = data['data']['title']
                 aid = 'av' + str(data['data']['aid'])
                 owner = data['data']['owner']['name']
