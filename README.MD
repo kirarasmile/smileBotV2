@@ -20,7 +20,7 @@
 * 推荐使用uvicorn启动bot，没有可以自己装
     * uvicorn --host 0.0.0.0 --port 5700 bot:bot.asgi
 * 需要更换trackers源请自行在m2t.js更换
-* 具体bot操作可以使用/help，私聊和群聊均可
+* 具体bot操作可以使用/helpme，私聊和群聊均可
 * 天气模块请前往 [openweathermap](https://openweathermap.org/api) 申请API TOKEN,并填入config.py内
 * 服务器查询需要自行配置且在bot.py中取消注释启用
 * 在Q群内高频发url或图片容易触发风控，但是不影响私聊，望周知

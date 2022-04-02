@@ -35,7 +35,7 @@ async def _(event: Event):
         await get_bangumi(bot, event)
     elif '/天气' in event.message:
         await get_weather(bot, event)
-    elif '/help' in event.message:
+    elif '/helpme' in event.message:
         await get_help(bot, event)
     # 服务器状态查询，指令：服务器状态+对应游戏服务器缩写
     # pattern_s = re.compile(r'服务器状态(.*)', re.I)
@@ -63,7 +63,7 @@ async def handle_msg(event):
         await get_weather(bot, event)
     elif event.message == '/番剧':
         await get_bangumi(bot, event)
-    elif '/help' in event.message:
+    elif '/helpme' in event.message:
         await get_help(bot, event)
 
 
