@@ -34,7 +34,7 @@ async def changebilibili(bot, event):
                 view = data['data']['stat']['view']
                 damaku = data['data']['stat']['danmaku']
                 reply = data['data']['stat']['reply']
-                await bot.send(event, message = picurl + "\n"+ title  + "\n" + "av号:" + aid +  "\n" + "作者：" + owner + "\n" + "播放量：" + str(view) + "  " + "弹幕：" + str(damaku) + "  " + "评论：" + str(reply))
+                await bot.send(event, message = picurl + "\n"+ title  + "\n" + "av号：" + aid +  "\n" + "作者：" + owner + "\n" + "播放量：" + str(view) + "  " + "弹幕：" + str(damaku) + "  " + "评论：" + str(reply))
             except Exception as e:
                 await bot.send(event, 'b2p_in \n'+str(e))
     except Exception as e:
