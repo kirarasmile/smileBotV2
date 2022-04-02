@@ -5,6 +5,7 @@
 * [aiocqhttp](https://github.com/nonebot/aiocqhttp)
 * [go-cqhttp](https://github.com/Mrs4s/go-cqhttp)
 * [ngosang/trackerslist](https://github.com/ngosang/trackerslist)
+* [枝网小作文](https://asoulcnki.asia/)
 ## 功能
 * 磁力链简单验车（查看磁力链资源名） 
 * B站链接转换
