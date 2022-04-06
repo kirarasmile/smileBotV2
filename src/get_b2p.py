@@ -24,6 +24,7 @@ async def changebilibili(bot, event):
                     bid = re.findall(pattern_short,data_short.text)[0]
                 else:
                     time.sleep(4)
+                    bid = re.findall(pattern_short,data_short.text)[0]
             except Exception as e:
                 await bot.send(event, '无法解析该短链接 \n'+str(e))
         if bid:
