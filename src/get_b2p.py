@@ -16,8 +16,8 @@ async def changebilibili(bot, event):
             bid_short = re.findall(pattern_b,data)
             for i in bid_short[0]:
                 if i:
-                    bid_short = i
-            data_short = requests.get('https://b23.tv/'+bid_short)
+                    bid_short_new = i
+            data_short = requests.get('https://b23.tv/'+bid_short_new)
             pattern_short = re.compile(r'https://www.bilibili.com/video/(.*?)/">', re.I)
             try:
                 if bid_short.text:
