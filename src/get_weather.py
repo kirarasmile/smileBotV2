@@ -22,3 +22,4 @@ async def get_weather(bot, event):
             await bot.send(event, message = '无法搜索到城市天气，输入的城市拼音为：' + city +'，请检查拼音和输入格式（需要空格）')
     except Exception as e:
         await bot.send(event, 'weathert error \n'+str(e))
+    return 0

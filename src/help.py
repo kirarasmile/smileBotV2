@@ -15,3 +15,4 @@ async def get_help(bot, event):
                                 + 'B站链接转换成图文：直接发送link；\n'\
                                 + '服务器状态查询：服务器状态+对应服务器名。'
                                  )
+    return 0

@@ -17,3 +17,4 @@ async def serverstatus(bot, event):
             await bot.send(event,'暂不支持该服务器查询')
     except Exception as e:
         await bot.send(event, 'server_status error \n'+str(e))
+    return 0

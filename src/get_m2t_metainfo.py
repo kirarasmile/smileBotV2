@@ -8,3 +8,4 @@ async def getmetainfo(bot, event):
         await bot.send(event, message=name)
     except Exception as e:
         await bot.send(event, 'm2t error \n'+str(e))
+    return 0

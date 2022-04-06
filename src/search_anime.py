@@ -48,3 +48,4 @@ async def searchanime(bot, event):  # 搜索番剧截图
             await bot.send(event,"saucenao搜不到，爬")
     except Exception as e:
         await bot.send(event, 'saucenao error \n'+str(e))
+    return 0

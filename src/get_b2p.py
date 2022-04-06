@@ -1,4 +1,4 @@
-import re, requests
+import re, requests, time
 from aiocqhttp import MessageSegment
 async def changebilibili(bot, event):
     data = event.message.replace('\\', '')
@@ -20,7 +20,10 @@ async def changebilibili(bot, event):
             data_short = requests.get('https://b23.tv/'+bid_short)
             pattern_short = re.compile(r'https://www.bilibili.com/video/(.*?)/">', re.I)
             try:
-                bid = re.findall(pattern_short,data_short.text)[0]
+                if bid_short.text:
+                    bid = re.findall(pattern_short,data_short.text)[0]
+                else:
+                    time.sleep(4)
             except Exception as e:
                 await bot.send(event, '无法解析该短链接 \n'+str(e))
         if bid:
@@ -40,3 +43,4 @@ async def changebilibili(bot, event):
                 await bot.send(event, 'b2p_in \n'+str(e))
     except Exception as e:
                         await bot.send(event, 'b2p_out \n'+str(e))
+    return 0

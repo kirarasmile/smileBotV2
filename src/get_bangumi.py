@@ -14,3 +14,4 @@ async def get_bangumi(bot, event):
                                         + ' >>>>>>>>>'+ '\n'+ item_info_str)
     except Exception as e:
         await bot.send(event, 'bangumi error \n'+str(e))
+    return 0

@@ -21,3 +21,4 @@ async def get_asoul(bot, event):
                                             + '从评论复制占比：' + str(reply_rate))
     except Exception as e:
         await bot.send(event, '枝网查重寄啦 \n'+str(e))
+    return 0
