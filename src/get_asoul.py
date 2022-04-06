@@ -8,8 +8,10 @@ async def get_asoul(bot, event):
     text_str = json.dumps(text_dict)
     res = requests.post(url, data=text_str)
     res_data = json.loads(res.text)
-    # print(res.text)
-    rate = res_data['data']['rate']
+    try:
+        rate = res_data['data']['rate']
+    except Exception as e:
+        return 0
     if rate == 1:
         try:
             await bot.send(event, message='枝网查重100%，纯纯滴小作文小偷！')
