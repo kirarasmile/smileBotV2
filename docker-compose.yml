@@ -1,0 +1,11 @@
+---
+version: "2.1"
+services:
+  docker_bot_projects:
+    environment:
+    - LANG=en_US.UTF-8
+    image: docker_bot_projects:latest
+    container_name: docker_bot_projects
+    volumes:
+      - $PWD:/etc/bot_projects 
+    restart: unless-stopped

@@ -28,6 +28,13 @@ python3 bangumi_api.py
     * uvicorn --host 0.0.0.0 --port 5700 bot:bot.asgi
 * 具体bot操作可以自己阅读bot.py
 * 在Q群内高频发url或图片容易触发风控，但是不影响私聊，望周知
+## Docker compose版本
+* 构建镜像 
+* ```docker build -t docker_bot_projects```
+* 初次登陆/使用
+* ```docker compose up -d && docker attach --sig-proxy=false docker_bot_projects```
+* 后续使用
+* ```docker compose up -d```
 ## todo
 * 完善B站小程序的链接转换
 * 完善食用文档
