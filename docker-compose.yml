@@ -1,11 +1,11 @@
 ---
 version: "2.1"
 services:
-  docker_bot_projects:
+  smileBot:
     environment:
     - LANG=en_US.UTF-8
-    image: docker_bot_projects:latest
-    container_name: docker_bot_projects
+    image: smilebot:latest
+    container_name: smilebot
     volumes:
-      - $PWD:/etc/bot_projects 
+      - $PWD:/etc/smilebot
     restart: unless-stopped
